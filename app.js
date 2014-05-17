@@ -1,9 +1,7 @@
 var ipsum = require('./lib/ipsum');
+var words = require('./lib/words');
 var randomNumber = require('./lib/randomNumber');
 var http = require('http');
-
-
-//console.log(p.generateParagraph(randomNumber(6,3)));
 
 var foo = function(a){
 
@@ -14,30 +12,22 @@ var foo = function(a){
 	};
 };
 
-var bar = function(){
+var returnArray = function(len){
 
-	return function(data){
-
-		myString += data;
-	};
+	ipsum.use(words.got).build(len, foo(a = []));
+	return a;
 };
-
-// ipsum.build(4, foo(myArray = []));
-// console.log(myArray);
-// console.log("\n\n");
-
-// ipsum.build(2, bar(myString = ""));
-// console.log(myString);
 
 var server = http.createServer().listen(1337);
 server.on('request', function(req, res){
 
-	res.writeHead(200, {'Content-Type': 'text/html'});
+	res.writeHead(200, {'Content-Type': 'application/json'});
 
-	ipsum.build(3, function(data){
+	var jo = {
+		title: ipsum.use(words.dino).generateLine(),
+		content: returnArray(3)
+	};
 
-		res.write("<p>"+data+"</p>");
-	});
-
+	res.write(JSON.stringify(jo));
 	res.end();
 });
