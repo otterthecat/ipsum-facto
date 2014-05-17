@@ -1,0 +1,21 @@
+{
+  "name": "Project",
+  "title": "Project",
+  "description": "Snazzy Description",
+  "version": "0.0.1",
+  "homepage": "git@github.com:otterthecat/myRepo.git",
+  "author": {
+    "name": "Otter the Cat",
+    "email": "otc@otterthecat.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/otterthecat/myRepo.git"
+  },
+  "dependencies": {
+    "chai": "*"
+  },
+  "keywords": [
+    "Things"
+  ]
+}
