@@ -1,4 +1,4 @@
-var p = require('./lib/paragraph');
+var ipsum = require('./lib/ipsum');
 var randomNumber = require('./lib/randomNumber');
 var http = require('http');
 
@@ -22,19 +22,19 @@ var bar = function(){
 	};
 };
 
-p.build(4, foo(myArray = []));
-console.log(myArray);
-console.log("\n\n");
+// ipsum.build(4, foo(myArray = []));
+// console.log(myArray);
+// console.log("\n\n");
 
-p.build(2, bar(myString = ""));
-console.log(myString);
+// ipsum.build(2, bar(myString = ""));
+// console.log(myString);
 
 var server = http.createServer().listen(1337);
 server.on('request', function(req, res){
 
 	res.writeHead(200, {'Content-Type': 'text/html'});
 
-	p.build(3, function(data){
+	ipsum.build(3, function(data){
 
 		res.write("<p>"+data+"</p>");
 	});
