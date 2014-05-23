@@ -14,20 +14,24 @@ var foo = function(a){
 
 var returnArray = function(len){
 
-	ipsum.use(words.got).build(len, foo(a = []));
+	ipsum.use(words.wilde).build(len, foo(a = []));
 	return a;
 };
 
 var server = http.createServer().listen(1337);
 server.on('request', function(req, res){
 
-	res.writeHead(200, {'Content-Type': 'application/json'});
+	res.writeHead(200, {'Content-Type': 'text/html'});
 
-	var jo = {
-		title: ipsum.use(words.dino).generateLine(),
-		content: returnArray(3)
-	};
+	// var jo = {
+	// 	title: ipsum.use(words.wilde).generateLine(),
+	// 	content: returnArray(3)
+	// };
 
-	res.write(JSON.stringify(jo));
+	// res.write(JSON.stringify(jo));
+	ipsum.use(words.wilde).build(4, function(data){
+
+		res.write("<p>" + data + "</p>");
+	});
 	res.end();
 });
