@@ -37,9 +37,22 @@ describe('ipsum', function(){
 
 	describe('#generateParagraph', function(){
 
+		it('should return a string', function(){
+
+			ipsum.use(nums).generateParagraph(2).should.be.a('string');
+		});
 	});
 
 	describe('#build', function(){
 
+		it('should pass generated text to supplied function', function(){
+
+				var str = "foobar";
+				ipsum.build(2, function(data){
+
+					str += data;
+				});
+				str.should.contain('.');
+		});
 	});
 });
