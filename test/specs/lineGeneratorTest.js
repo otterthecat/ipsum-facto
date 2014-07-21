@@ -11,6 +11,7 @@ var nums = ['one', 'two', 'three', 'four', 'five', 'six'];
 var lineGenerator = require('../../lib/lineGenerator');
 
 describe('lineGenerator', function(){
+	'use strict';
 
 	describe('#use', function(){
 
