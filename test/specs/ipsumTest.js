@@ -15,8 +15,6 @@ describe('ipsum', function () {
 	'use strict';
 
 	describe('#use', function () {
-		before(function () {});
-
 		it('should return ipsum object (for chaining)', function () {
 			var i = ipsum.use([]);
 			ipsum.should.equal(i);
